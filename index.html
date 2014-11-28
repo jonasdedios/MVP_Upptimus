@@ -32,6 +32,7 @@
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.2.27/angular-route.min.js"></script>
 </head>
 
 <body>
@@ -85,28 +86,36 @@
                         
                         <div class="form-group" ng-controller="controladorUpp">
                             
-                            <div class="checkbox" ng-repeat="zona in zonasCuerpo">
+                            <div class="checkbox" ng-repeat="zona in zonasCuerpo" >
                                 
-                                    {{zona.nombre | uppercase}}
-                                    <input type="checkbox" value="">
+                                    <label ng-model="zonaAdd">{{zona.nombre | uppercase}}</label>
+                                
+                                    <input type="checkbox" value="" >
                                 
                             </div> 
                             
                             
                             <div class="col-sm-offset-2 col-sm-10 boton-abs">
-                                <button type="submit" class="btn btn-default">Comenzar</button>
+                                <button type="submit" class="btn btn-default" ng-click="mostrarZonas()">Comenzar</button>
                             </div>
+                            
+                            
+                                <p>{{deposito}}</p>
+
+                            
                     </div>
                      
                         
                 </div> 
             </div>
             <div class="col-md-1"></div>
+                
         </div>
         </div>
     </div>
     
     <script>
+        var miAplicacion = angular.module ('includes',[]) 
         var listaDeChecks = angular.module ('armarRutina',[])
         listaDeChecks.controller ('controladorUpp',['$scope', function($scope){
             
@@ -118,11 +127,22 @@
                 {nombre: 'muñecas'},
                 {nombre: 'rodillas'},
                 {nombre: 'tobillos'}
-            ]
+            ];
+            
+            $scope.deposito = [];
+            
+            $scope.mostrarZonas = function(){
+                
+                $scope.deposito.push($scope.zonaAdd)
+                
+            }
+            
+            
+            
         
         }])
         
-        var agregarAlArreglo = angular.module ('')
+        
     </script>
     
 </body>

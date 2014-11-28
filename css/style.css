@@ -66,6 +66,9 @@ body{
     background-color: #eef6f7;
     font-family: 'ubuntulight';
 }
+.gris{
+    background-color: #ccc;
+}
 h2{
     font-size: 1.6em;
     color: #09bfe6;
