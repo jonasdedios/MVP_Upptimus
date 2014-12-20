@@ -1,5 +1,4 @@
-@font-face {
-    font-family: 'ubuntubold';
+@font-face {   font-family: 'ubuntubold';
     src: url('../fonts/ubuntu-b-webfont.eot');
     src: url('../fonts/ubuntu-b-webfont.eot?#iefix') format('embedded-opentype'),
          url('../fonts/ubuntu-b-webfont.woff2') format('woff2'),
@@ -81,7 +80,7 @@ h3{
 }
 .navbar-brand{
     padding: 0;
-    margin: 0 0 0 15px;
+    margin: 0 0 0 0;
 }
 .navbar-default .navbar-nav>li>a {
     font-size: 1.2em;   
@@ -158,22 +157,23 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 .boton-abs button[type="submit"]:focus{
     outline: none;
 }
-.checkbox{
+.salto{
     border-bottom: 1px solid #ccc;
-    padding: 30px 5px 15px;
+    padding: 12px 5px 15px;
 }
-.form-horizontal .checkbox{
+.form-horizontal .salto{
     padding: 15px 15px 15px;
 }
-.checkbox label{
+.salto label{
     font-size: 1.2em;
     
 }
-.checkbox input[type="checkbox"]{
+
+.salto input[type="checkbox"]{
     -webkit-appearance: none;
-   -moz-appearance:    none;
-   appearance:         none;
-     float: right;
+    -moz-appearance:    none;
+    appearance:         none;
+    float: right;
     width: 22px;
     height: 22px;
     background-color: transparent;
@@ -183,10 +183,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     -webkit-transition:all .2s;
     -moz-transition:all .2s;
 }
-.checkbox input[type="checkbox"]:focus{
+.salto input[type="checkbox"]:focus{
     outline: none;
 }
-.checkbox input[type="checkbox"]:checked{
+.salto input[type="checkbox"]:checked{
     width: 22px;
     height: 22px;
     color: #60c889;
@@ -197,10 +197,24 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     border: none;
     
 }
-.checkbox input[type="checkbox"]:hover{
-    background-color: #dbdbdb;
+.salto input[type="checkbox"]:hover{
+    background-color:#dbdbdb;
 }
 .checks{
     margin: 50px 0 0 0;
 }
-    
+.salto{
+    display: block;
+}
+#video_player { display: table; line-height: 0; font-size: 0; background: #000; }
+#video_player video, #video_player figcaption { display: table-cell; vertical-align: top; }
+#video_player figcaption { width: 25%; }
+#video_player figcaption a { display: block; opacity: .5;
+transition: 1s opacity; }
+#video_player figcaption a img, figure video { width: 100%; height: auto; }
+#video_player figcaption a:hover { opacity: 1; }
+
+@media (max-width: 700px) {
+#video_player video, #video_player figcaption { display: table-row; }
+#video_player figcaption a { display: inline-block; width: 33.33%; }
+}
